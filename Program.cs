@@ -1,13 +1,18 @@
 ﻿lista lista = new lista();
+System.Console.WriteLine("Print lista normal: ");
 lista.add(12);
 lista.add(5);
 lista.add(9);
+lista.add(5);
+lista.add(1);
 lista.print();
-
+System.Console.WriteLine();
+System.Console.WriteLine("Print lista encadeada: ");
 LinkedList linkedList = new LinkedList();
 linkedList.Add(2);
 linkedList.Add(5);
 linkedList.PrintinkedList();
+
 
 public class lista
 {
@@ -86,25 +91,25 @@ public class LinkedList
             return;
         }
 
-        Node current = first;
-        while (current.Next != null)
+        Node atual = first;
+        while (atual.Next != null)
         {
-            current = current.Next;
+            atual = atual.Next;
         }
 
         Node newNode = new Node();
         newNode.value = value;
         newNode.Next = null;
-        current.Next = newNode;
+        atual.Next = newNode;
     }
 
     public void PrintinkedList()
     {
-        Node current = first;
-        while (current != null)
+        Node atual = first;
+        while (atual != null)
         {
-            Console.WriteLine(current.value);
-            current = current.Next;
+            Console.WriteLine(atual.value);
+            atual = atual.Next;
         }
     }
 
